@@ -2,6 +2,8 @@ if room == Intro{
 	audio_play_sound(introduction, 1, true)
 }
 
+count_test = 0
+
 global.is_dialog_active = true
 
 //parametros textbox
@@ -26,8 +28,17 @@ setup = false
 
 switch room{
 	
+	case navio2:
+	
+	text[0] = "OLA"
+	text[1] = "HEY"
+	text[2] = "aopjsaopçdlf"
+	text[3] = "test"
+	
+	break
+	
 	case Intro:
-	textbox_width = room_width-100
+	textbox_width = room_width-400
 	textbox_height = room_height-100
 	line_width = 1250
 	

@@ -2,6 +2,7 @@ if keyboard_check_pressed(vk_f11){
 	window_set_fullscreen(!window_get_fullscreen());
 };
 
+
 var accept_key = keyboard_check_pressed(ord("L"))
 
 var textbox_x = camera_get_view_x(view_camera[0])
@@ -70,6 +71,8 @@ if accept_key{
 		draw_char = text_lenght[page]
 	}
 }
+
+
 	
 //desenha o text box
 txtb_img += txtb_img_spd
