@@ -1,4 +1,4 @@
-// Voltar para o y inicial
+ // Voltar para o y inicial
 if (y > y_inicial){
 	// Diminuir o y gradativamente até chegar em y_inicial
 	y -= global.gravidade

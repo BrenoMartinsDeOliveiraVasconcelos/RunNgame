@@ -2,9 +2,6 @@
 // You can write your code in this editor
 id_plataforma = 0 // O id da possivel plataforma que o objeto ta tocando
 
-if !room == navio2{
-	sprite_index = sMecha
-}
 
 centro_gravitacional = instance_nearest(x, y, oCentroGravitacional)
 y_inicial = centro_gravitacional.y

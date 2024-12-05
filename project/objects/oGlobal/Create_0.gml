@@ -79,7 +79,14 @@ if array_length(lines) < array_length(global.originais){
 }
 
 // Primeira sala
-global.sala_1 = game
+
+global.sala_1 = navio1
+
+if room == navio2{
+	global.sala_1 = navio2
+}else if room == game{
+	global.sala_1 = game
+}
 
 // Se o jogo acabou de começar, carrega o arquivo default
 if room == global.sala_1{

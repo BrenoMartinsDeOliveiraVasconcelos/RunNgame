@@ -38,7 +38,7 @@ switch room{
 	break
 	
 	case Intro:
-	textbox_width = room_width-400
+	textbox_width = room_width-100
 	textbox_height = room_height-100
 	line_width = 1250
 	
