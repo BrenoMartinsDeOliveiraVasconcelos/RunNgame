@@ -159,6 +159,35 @@ if (!global.is_dialog_active) {
 	    //}
 	}
 	
+	// trocar arma
+	// Variáveis de controle de tempo
+
+	var troca_arma_intervalo = room_speed * 10; // 10 segundos (em frames, com base na taxa de quadros)
+
+	// Incrementar o timer de troca de arma
+	troca_arma_timer += 1;
+
+	if arma_atual == sFogo and troca_arma_timer == 7 and vida > 0{
+		audio_play_sound(risada_chefao, 1, false)	
+	}
+
+	if (troca_arma_timer >= troca_arma_intervalo) {
+	    // Troca de arma a cada 10 segundos
+	    if (arma_atual == sFogo) {
+	        arma_atual = sBalaInimigo;
+			audio_play_sound(minigun, 1, false)
+	        sprite_index = sMechaFlameTrower;  // Atualize o sprite de acordo com a arma
+	        fire_rate = 2;  // Ajuste o tempo de disparo conforme a arma
+	    } else if (arma_atual == sBalaInimigo) {
+	        arma_atual = sFogo;
+	        sprite_index = sMechaFlameTrower;  // Atualize o sprite de acordo com a arma
+	        fire_rate = 45;  // Ajuste o tempo de disparo conforme a arma
+	    }
+    
+	    // Resetar o timer
+	    troca_arma_timer = 0;
+	}
+	
 } else {
     // O NPC está pausado
 }
@@ -192,31 +221,4 @@ oCoracaoMecha.sprite_index = coracoes[indice];
 
 show_debug_message(string(vida_porcentagem))
 
-// trocar arma
-// Variáveis de controle de tempo
 
-var troca_arma_intervalo = room_speed * 10; // 10 segundos (em frames, com base na taxa de quadros)
-
-// Incrementar o timer de troca de arma
-troca_arma_timer += 1;
-
-if arma_atual == sFogo and troca_arma_timer == 7 and vida > 0{
-	audio_play_sound(risada_chefao, 1, false)	
-}
-
-if (troca_arma_timer >= troca_arma_intervalo) {
-    // Troca de arma a cada 10 segundos
-    if (arma_atual == sFogo) {
-        arma_atual = sBalaInimigo;
-		audio_play_sound(minigun, 1, false)
-        sprite_index = sMechaFlameTrower;  // Atualize o sprite de acordo com a arma
-        fire_rate = 2;  // Ajuste o tempo de disparo conforme a arma
-    } else if (arma_atual == sBalaInimigo) {
-        arma_atual = sFogo;
-        sprite_index = sMechaFlameTrower;  // Atualize o sprite de acordo com a arma
-        fire_rate = 45;  // Ajuste o tempo de disparo conforme a arma
-    }
-    
-    // Resetar o timer
-    troca_arma_timer = 0;
-}
